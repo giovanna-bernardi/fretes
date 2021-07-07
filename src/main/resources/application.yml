@@ -1,0 +1,23 @@
+micronaut:
+  application:
+    name: fretes
+  server:
+    port: 8081
+
+grpc:
+  server:
+    health:
+      enabled: true # default: true
+
+##
+# Monitoramento e Métricas
+# https://docs.micronaut.io/latest/guide/index.html#providedEndpoints
+##
+endpoints:
+  all:
+    port: 8085        # usa porta padrão do http-server ou assume essa outra
+    sensitive: false  # por padrão (true), a maioria dos endpoints são protegidos por segurança
+  health:             # https://docs.micronaut.io/latest/guide/index.html#healthEndpoint
+    enabled: true     # por padrão, é habilitada
+    sensitive: false  # default: false
+    details-visible: ANONYMOUS  # https://docs.micronaut.io/latest/api/io/micronaut/management/endpoint - detalhes para usuarios não autenticados
